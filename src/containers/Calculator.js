@@ -26,6 +26,8 @@ function App() {
     setRunningTotal(parseFloat("" + tempTotal + number));
   }
 
+  
+
   const handleDecimal = () => {
     if(!runningTotal.toString().includes("."))
     setRunningTotal(runningTotal + ".")
@@ -93,9 +95,18 @@ function App() {
   }
 
   const divide = (number) => {
-    let calculatedNumber = parseFloat(previousTotal) / parseFloat(number);
-    setRunningTotal(calculatedNumber);
-    setCalculatedTotal(calculatedNumber);
+    if (number === 0) {
+      setCalculatedTotal("Not a number")
+      setRunningTotal("Not a number")
+    }
+
+    
+    else {
+      let calculatedNumber = parseFloat(previousTotal) / parseFloat(number);
+      setRunningTotal(calculatedNumber);
+      setCalculatedTotal(calculatedNumber);
+    }
+    
   }
 
 
