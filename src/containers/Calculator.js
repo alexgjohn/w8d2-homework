@@ -98,9 +98,10 @@ function App() {
     if (number === 0) {
       setCalculatedTotal("Not a number")
       setRunningTotal("Not a number")
+    } else if (number < 0) {
+      setCalculatedTotal("Don't do that")
+      setRunningTotal("Don't do that")
     }
-
-    
     else {
       let calculatedNumber = parseFloat(previousTotal) / parseFloat(number);
       setRunningTotal(calculatedNumber);
